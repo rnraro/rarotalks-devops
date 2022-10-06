@@ -9,28 +9,26 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] 
 }
 
-resource "tls_private_key" "ssh-key" {
+resource "tls_private_key" "ssh" {
   algorithm = "RSA"
-  rsa_bits  = "4096"
+  rsa_bits  = 4096
 }
 
-resource "local_file" "local-ssh-key" { 
-  filename = "${path.module}/key/${var.key_name}"
-  content = tls_private_key.ssh-key.private_key_pem
+resource "local_file" "mykey" {
+  content  = tls_private_key.ssh.private_key_pem
+  filename = "key/appserver.pem"
+}
 
-  provisioner "local-exec" {
-    command = <<-EOT
-        echo '${tls_private_key.ssh-key.private_key_pem}' > 'key/${var.key_name}'
-        chmod 600 'key/${var.key_name}'
-      EOT
-    }
+resource "aws_key_pair" "generated_key" {
+  key_name    = var.key_name
+  public_key  = tls_private_key.ssh.public_key_openssh
 }
 
 resource "aws_instance" "app_server" {
   ami                         = data.aws_ami.ubuntu.id
   availability_zone           = var.aws_az
   instance_type               = "t2.micro"
-  key_name                    = tls_private_key.ssh-key.private_key_pem
+  key_name                    = aws_key_pair.generated_key.key_name
   vpc_security_group_ids      = ["${aws_security_group.appserver_sg.id}"]
   subnet_id                   = aws_subnet.subnet.id
   associate_public_ip_address = true
