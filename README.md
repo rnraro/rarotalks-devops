@@ -75,7 +75,7 @@ Neste Hands-On, utilizaremos apenas serviço de computação em Nuvem: EC2 Free 
 - Crie a conta na plataforma ou sincronize com a sua conta do Github;
 - Acesse a o Workspace com os projetos:
 
-![Workspace - Gitpod](https://gitpod.io#snapshot/77d0cdb0-1d2e-443c-b114-307f2751b2fa)
+[Workspace - Gitpod](https://gitpod.io#snapshot/77d0cdb0-1d2e-443c-b114-307f2751b2fa)
 
 ## Referências
 
