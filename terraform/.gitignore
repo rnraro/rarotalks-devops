@@ -2,6 +2,9 @@
 **/.terraform/*
 .terraform/
 
+# Ignore 
+docker/
+
 # .tfstate files
 *.tfstate
 *.tfstate.*

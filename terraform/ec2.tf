@@ -35,5 +35,24 @@ resource "aws_instance" "app_server" {
   tags = {
     Name = "App Server"
   }
-  user_data = "${file("scripts/install.sh")}"
+  
+  provisioner "file" {
+    source      = "scripts/install.sh"
+    destination = "/tmp/install.sh"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x /tmp/install.sh",
+      "sudo /tmp/install.sh"
+    ]
+  }
+
+  connection {
+    type        = "ssh"
+    user        = "ubuntu"
+    private_key = tls_private_key.ssh.private_key_pem
+    host        = aws_instance.app_server.public_ip
+    timeout     = "1m"
+  }
 }

@@ -1,15 +1,11 @@
 #!/bin/bash
 set -ex
 sudo apt update -y
-echo "Instalando packages"
-sudo apt install curl htop vim net-tools
+echo "Instalando s.o packages"
+sudo apt install -y curl vim net-tools 
 echo "Instalando docker"
-curl -sSL https://get.docker.com | sh
-sudo service docker start
+sudo curl -sSL https://get.docker.com | sh
 sudo usermod -a -G docker ${USER}
 
-# BeerAPI
-#docker run -d -p 80:3000 rarodevops/rarotalks-beer
-
-# Mario
-#docker run -d -p 80:8080 rarodevops/rarotalks-mario
+# Run Mario App
+docker run -d -p 80:8080 rarodevops/rarotalks-mario
