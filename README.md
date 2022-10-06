@@ -5,6 +5,7 @@
 
 - [AWS CLI - Linux](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 - [Terraform CLI](https://www.terraform.io/downloads)
+- [Workspace - GitPod](https://gitpod.io#snapshot/77d0cdb0-1d2e-443c-b114-307f2751b2fa)
 
 ## Criar conta na AWS
 
@@ -58,8 +59,7 @@ Neste Hands-On, utilizaremos apenas serviço de computação em Nuvem: EC2 Free 
 <img width="450px" img src="./img/iam3.png">
 </p>
 
-- Na tela Create user group em User group name digite um nome para o grupo em Attach permissions policies pesquise por <b>mazonEC2FullAccess</b> em seguida clique em adicionar, vamos adicionar a permissão <b>AmazonEC2FullAccess</b> para todos os usuários que faram parte do grupo <b>EC2_Group</b>, em seguida clique em Create group.
-
+- Na tela Create user group em User group name digite um nome para o grupo em Attach permissions policies https://github.com/rnraro/rarotalks-devops
 - Ainda na tela <b>Identity and Access Management (IAM)</b> em Access management clique em Users.
 
 - Na tela Users clique em <b>Add users.</b>
@@ -75,7 +75,7 @@ Neste Hands-On, utilizaremos apenas serviço de computação em Nuvem: EC2 Free 
 - Crie a conta na plataforma ou sincronize com a sua conta do Github;
 - Acesse a o Workspace com os projetos:
 
-![Workspace - Gitpod]()
+![Workspace - Gitpod](https://gitpod.io#snapshot/77d0cdb0-1d2e-443c-b114-307f2751b2fa)
 
 ## Referências
 
