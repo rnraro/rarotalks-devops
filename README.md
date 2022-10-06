@@ -4,7 +4,8 @@
 ## Requisitos
 
 - [AWS CLI - Linux](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-- [Terraform CLI](https://www.terraform.io/downloads)
+- [Terraform CLI](https://www.terraform.io/downloads);
+- [Comandos Terraform](https://www.terraform.io/cli/commands);
 - [Workspace - GitPod](https://gitpod.io#snapshot/77d0cdb0-1d2e-443c-b114-307f2751b2fa)
 
 ## Criar conta na AWS
